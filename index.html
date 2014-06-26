@@ -18,6 +18,10 @@
         // Now safe to use device APIs
 		alert("Device is Ready");
     }
+	
+	document.addEventListener('touchstart', function(event) {
+		alert(event.touches.length);
+	}, false);
 
     </script>
   </head>
