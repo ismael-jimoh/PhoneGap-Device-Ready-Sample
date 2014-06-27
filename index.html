@@ -23,6 +23,14 @@
 		alert(event.touches.length);
 		window.open("https://www.facebook.com", '_blank','location=yes');
 	}, false);
+	
+	document.addEventListener('touchend', function(event) {
+		alert("Alert Touch ended");
+	}, false);
+	
+	document.addEventListener('touchmove', function(event) {
+		alert("Alert Touch Move Fired");
+	}, false);
 
     </script>
   </head>
