@@ -73,6 +73,8 @@
 		<param name="APP_NAME" value="PhoneGap 3.3 Example - Test1" />
 	</gap:plugin>
 	
+	<gap:plugin name="com.simonmacdonald.telephonenumber" version="1.0.0" />
+	
 	<access origin="*" />
 
 </widget>

@@ -4,6 +4,7 @@
     <title>Device Ready Example</title>
 
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+	<script type="text/javascript" charset="utf-8" src="telephonenumber.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -31,11 +32,23 @@
 	document.addEventListener('touchmove', function(event) {
 		alert("Alert Touch Move Fired");
 	}, false);*/
+	
+	
+	var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
+	function myNumber(){
+		telephoneNumber.get(function(result) {
+			alert("result = " + result);
+		}, function() {
+			alert("error");
+		});
+	}
 
     </script>
   </head>
   <body onload="onLoad()">
 		<br><br>
 		<button onclick="window.open('cameraPage.html')">Camera Page</button>
+		<br><br>
+		<button onclick="myNumber()">Get User Number</button>
   </body>
 </html>
