@@ -34,8 +34,9 @@
 	}, false);*/
 	
 	
-	var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
+	
 	function myNumber(){
+		var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
 		telephoneNumber.get(function(result) {
 			alert("result = " + result);
 		}, function() {
