@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
+		xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.sample.deviceready"
         versionCode = "10" 
         version     = "1.0.0" >
@@ -74,6 +75,44 @@
 	</gap:plugin>
 	
 	<gap:plugin name="com.simonmacdonald.telephonenumber" version="1.0.0" />
+	
+	<gap:config-file platform="android" parent="/manifest">
+		<supports-screens 
+			android:xlargeScreens="false" 
+			android:largeScreens="false" 
+			android:smallScreens="false" />
+	</gap:config-file>
+	
+	<gap:config-file platform="android" parent="/manifest/application">
+		 <activity android:screenOrientation="portrait" android:configChanges="orientation"/>
+		 <activity android:name=".ui.MyActivity" >
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="image/*" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="text/plain" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.SEND_MULTIPLE" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="image/*" />
+			</intent-filter>
+			<intent-filter>
+						<action android:name="android.intent.action.MAIN" />
+						<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+						<action android:name="android.intent.action.VIEW"></action>
+						<category android:name="android.intent.category.DEFAULT"></category>
+						<category android:name="android.intent.category.BROWSABLE"></category>
+						<data android:host="www.youtube.com" android:scheme="http"></data>
+			</intent-filter>
+		</activity>
+	</gap:config-file>
 	
 	<access origin="*" />
 
