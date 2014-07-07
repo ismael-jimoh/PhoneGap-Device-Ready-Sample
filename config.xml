@@ -48,7 +48,7 @@
 	<gap:splash src="splash/android/hdpi_landscape.png" gap:platform="android" gap:qualifier="land-hdpi" />
 	<gap:splash src="splash/android/xhdpi_landscape.png" gap:platform="android" gap:qualifier="land-xhdpi" />
 	
-	
+	<!--Plugins-->
 	<gap:plugin name="org.apache.cordova.camera" />
 	<gap:plugin name="org.apache.cordova.media-capture" />
 	<gap:plugin name="org.apache.cordova.device" version="0.2.3" />
