@@ -11,6 +11,8 @@
     //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
+		document.addEventListener("online", onOnline, false);
+		document.addEventListener("offline", onOffline, false);
     }
 
     // device APIs are available
@@ -25,6 +27,16 @@
 			alert("error");
 		});
     }
+	
+	function onOnline() {
+		// Handle the online event
+		alert("Device is online");
+	}
+	
+	function onOffline() {
+		// Handle the offline event
+		alert("Sorry Device is offline");
+	}
 	
 	/*document.addEventListener('touchstart', function(event) {
 		alert(event.touches.length);
