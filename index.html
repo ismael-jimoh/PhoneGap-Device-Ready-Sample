@@ -20,6 +20,7 @@
     function onDeviceReady() {
         // Now safe to use device APIs
 		alert("Device is Ready");
+		alert(device.available);
 		var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
 		telephoneNumber.get(function(result) {
 			alert("result = " + result);
