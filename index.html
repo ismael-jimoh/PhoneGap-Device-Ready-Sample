@@ -65,7 +65,12 @@
 	}
 	
 	function openMyAppStore(){
-		window.open("https://itunes.apple.com/my/artist/tivola-publishing-gmbh/id336293052","_blank","location=no");
+		if(device.platform=="iOS"){
+			window.open("https://itunes.apple.com/my/artist/tivola-publishing-gmbh/id336293052","_blank","location=no");
+		}
+		else if(device.platform=='Android'){
+			window.open('https://play.google.com/store/apps/developer?id=GREE%2C%20INC&hl=en','_blank','location=no');
+		}
 	}
 
     </script>
