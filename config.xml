@@ -69,50 +69,8 @@
 	
 	<gap:plugin name="com.phonegap.plugins.barcodescanner" version="1.1.0" />
 	
-	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
-		<param name="APP_ID" value="596163223824560" />
-		<param name="APP_NAME" value="PhoneGap 3.3 Example - Test1" />
-	</gap:plugin>
 	
 	<gap:plugin name="com.simonmacdonald.telephonenumber" version="1.0.0" />
-	
-	<gap:config-file platform="android" parent="/manifest">
-		<supports-screens 
-			android:xlargeScreens="false" 
-			android:largeScreens="false" 
-			android:smallScreens="false" />
-	</gap:config-file>
-	
-	<gap:config-file platform="android" parent="/manifest/application">
-		 <activity android:screenOrientation="portrait" android:configChanges="orientation"/>
-		 <activity android:name=".ui.MyActivity" >
-			<intent-filter>
-				<action android:name="android.intent.action.SEND" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<data android:mimeType="image/*" />
-			</intent-filter>
-			<intent-filter>
-				<action android:name="android.intent.action.SEND" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<data android:mimeType="text/plain" />
-			</intent-filter>
-			<intent-filter>
-				<action android:name="android.intent.action.SEND_MULTIPLE" />
-				<category android:name="android.intent.category.DEFAULT" />
-				<data android:mimeType="image/*" />
-			</intent-filter>
-			<intent-filter>
-						<action android:name="android.intent.action.MAIN" />
-						<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-			<intent-filter>
-						<action android:name="android.intent.action.VIEW"></action>
-						<category android:name="android.intent.category.DEFAULT"></category>
-						<category android:name="android.intent.category.BROWSABLE"></category>
-						<data android:host="www.youtube.com" android:scheme="http"></data>
-			</intent-filter>
-		</activity>
-	</gap:config-file>
 	
 	<access origin="*" />
 
