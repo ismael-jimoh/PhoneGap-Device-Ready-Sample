@@ -63,12 +63,18 @@
 			alert("error");
 		});
 	}
+	
+	function openMyAppStore(){
+		window.open("https://itunes.apple.com/my/artist/tivola-publishing-gmbh/id336293052","_blank","location=no");
+	}
 
     </script>
   </head>
   <body onload="onLoad()">
 		<br><br>
 		<button onclick="window.open('cameraPage.html')">Camera Page</button>
+		<br><br>
+		<button onclick="openMyAppStore();">App Store</button>
 		<br><br>
 		<button onclick="myNumber()">Get User Number</button>
   </body>
