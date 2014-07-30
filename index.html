@@ -72,6 +72,10 @@
 			window.open('https://play.google.com/store/apps/developer?id=GREE%2C%20INC&hl=en','_blank','location=no');
 		}
 	}
+	
+	function openChildBrowser(){
+		window.plugins.ChildBrowser.showWebPage('http://www.google.com',{ showLocationBar: true });
+	}
 
     </script>
   </head>
@@ -80,6 +84,8 @@
 		<button onclick="window.open('cameraPage.html')">Camera Page</button>
 		<br><br>
 		<button onclick="openMyAppStore();">App Store</button>
+		<br><br>
+		<button onclick="openChildBrowser();">Child Browser</button>
 		<br><br>
 		<button onclick="myNumber()">Get User Number</button>
 		<br><br>
