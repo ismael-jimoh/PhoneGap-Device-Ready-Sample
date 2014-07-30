@@ -76,6 +76,10 @@
 	function openChildBrowser(){
 		window.plugins.ChildBrowser.showWebPage('http://www.google.com',{ showLocationBar: true });
 	}
+	
+	function openInApp(){
+		window.open('http://www.google.com');
+	}
 
     </script>
   </head>
@@ -89,6 +93,6 @@
 		<br><br>
 		<button onclick="myNumber()">Get User Number</button>
 		<br><br>
-		<a href="#" onclick="openMyAppStore();">Open Link in inAppBrowser</a>
+		<a href="#" onclick="openInApp();">Open Link in inAppBrowser</a>
   </body>
 </html>
