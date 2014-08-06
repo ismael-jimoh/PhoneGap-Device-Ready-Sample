@@ -80,6 +80,67 @@
 	function openInApp(){
 		window.open('http://www.google.com','_blank','location=no,closebuttoncaption=End');
 	}
+	
+	function playVideo(){
+		VideoPlayer.play("https://www.youtube.com/watch?v=en_sVVjWFKk");
+	}
+	
+	function playAudio(src){
+		my_media = new Media(src, onSuccess, onError);
+
+            // Play audio
+            my_media.play();
+
+            // Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                                setAudioPosition((position) + " sec");
+                            }
+                        },
+                        // error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            setAudioPosition("Error: " + e);
+                        }
+                    );
+                }, 1000);
+            }
+	}
+	
+	function onSuccess() {
+        console.log("playAudio():Audio Success");
+    }
+
+        // onError Callback
+        //
+    function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                  'message: ' + error.message + '\n');
+    }
+	
+	 function pauseAudio() {
+            if (my_media) {
+                my_media.pause();
+            }
+        }
+
+        // Stop audio
+        //
+        function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
+	
+	var my_media = null;
+    var mediaTimer = null;
 
     </script>
   </head>
@@ -94,7 +155,7 @@
 		<button onclick="myNumber()">Get User Number</button>
 		<br><br>
 		<a href="#" onclick="openInApp();">Open Link in inAppBrowser</a><br><br>
-		<P>
+		<!--<P>
 			<video width="160" height="120" controls webkit-playsinline autoplay>
 				<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
 			</video>
@@ -108,6 +169,18 @@
 			<video width="160" height="120" controls webkit-playsinline autoplay>
 				<source src="www.channel4.com/programmes/fresh-meat/4od">
 			</video>
-		</P>
+		</P>-->
+		<p>
+		<button onclick="playVideo()">Play Video</button>
+	</p>
+	<p>
+		<button onclick="playAudio('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3')">Play Audio</button>
+	</p>
+	<p>
+		<button onclick="pauseAudio()">Pause Audio</button>
+	</p>
+	<p>
+		<button onclick="stopAudio()">Stop Audio</button>
+	</p>
   </body>
 </html>
