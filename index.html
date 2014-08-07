@@ -27,6 +27,9 @@
 		}, function() {
 			alert("error");
 		});
+		if(device.platform == "Android"){
+			playVideo();
+		}
     }
 	
 	function onOnline() {
