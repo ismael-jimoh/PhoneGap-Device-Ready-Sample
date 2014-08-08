@@ -28,7 +28,7 @@
 			alert("error");
 		});
 		if(device.platform == "Android"){
-			playVideo();
+			//playVideo();
 		}
     }
 	
@@ -141,6 +141,20 @@
             clearInterval(mediaTimer);
             mediaTimer = null;
         }
+		
+		function scanCode(){
+			cordova.plugins.barcodeScanner.scan(
+			  function (result) {
+				  alert("We got a barcode\n" +
+						"Result: " + result.text + "\n" +
+						"Format: " + result.format + "\n" +
+						"Cancelled: " + result.cancelled);
+			  }, 
+			  function (error) {
+				  alert("Scanning failed: " + error);
+			  }
+		   );
+		}
 	
 	var my_media = null;
     var mediaTimer = null;
@@ -184,6 +198,9 @@
 	</p>
 	<p>
 		<button onclick="stopAudio()">Stop Audio</button>
+	</p>
+	<p>
+		<button onclick="scanCode()">Scan Barcode</button>
 	</p>
   </body>
 </html>
