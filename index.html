@@ -32,6 +32,23 @@
 		}
     }
 	
+	function getAcceleration(){
+		navigator.accelerometer.getCurrentAcceleration(onAccelSuccess, onError);
+	}
+	
+	function onSuccess(acceleration) {
+        alert('Acceleration X: ' + acceleration.x + '\n' +
+              'Acceleration Y: ' + acceleration.y + '\n' +
+              'Acceleration Z: ' + acceleration.z + '\n' +
+              'Timestamp: '      + acceleration.timestamp + '\n');
+    }
+
+    // onError: Failed to get the acceleration
+    //
+    function onError() {
+        alert('onError!');
+    }
+	
 	function onOnline() {
 		// Handle the online event
 		alert("Device is online");
@@ -205,6 +222,9 @@
 	</p>
 	<p>
 		<button onclick="scanCode()">Scan Barcode</button>
+	</p>
+	<p>
+		<button onclick="getAcceleration()">Get Acceleration</button>
 	</p>
   </body>
 </html>
