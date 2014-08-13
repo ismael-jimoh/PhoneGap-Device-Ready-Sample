@@ -76,7 +76,7 @@
 	
 	<gap:plugin name="com.dawsonloudon.videoplayer" version="1.0.0" />
 	
-	<gap:plugin name="com.conetix.ibeacon" version="1.0.0" />
+	<!--<gap:plugin name="com.conetix.ibeacon" version="1.0.0" />-->
 	
 	<access origin="*" />
 
